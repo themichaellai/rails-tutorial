@@ -3,7 +3,7 @@ class CreateSubmissions < ActiveRecord::Migration
     create_table :submissions do |t|
       t.string :title
       t.string :url
-      t.integer :upvotes
+      t.integer :upvotes, default: 0
 
       t.timestamps
     end

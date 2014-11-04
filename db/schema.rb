@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141104031925) do
   create_table "submissions", force: true do |t|
     t.string   "title"
     t.string   "url"
-    t.integer  "upvotes"
+    t.integer  "upvotes",    default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
