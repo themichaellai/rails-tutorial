@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  resources :submissions
+  get 'comments/create'
+
+  resources :submissions do
+    resources :comments, only: [:create]
+  end
 end

@@ -1,3 +1,11 @@
 <h1><%= link_to @submission.title, @submission.url %></h1>
 <h2>Upvotes: <%= @submission.upvotes %></h2>
 <%= link_to 'edit', action: :edit %>
+<h2>Comments</h2>
+<ul>
+  <% @submission.comments.each do |comment| %>
+    <li><%= comment.text %></li>
+  <% end %>
+</ul>
+<h3>Submit a comment</h3>
+<%= render partial: 'partials/comment_form', locals: {submission: @submission, comment: @submission.comments.build} %>

@@ -36,7 +36,6 @@ class SubmissionsController < ApplicationController
 
   private
   def submission_params
-    puts params.class
     params.require(:submission).permit(:title, :url)
   end
 end
