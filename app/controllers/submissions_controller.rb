@@ -34,6 +34,15 @@ class SubmissionsController < ApplicationController
     end
   end
 
+  def vote
+    @submission = Submission.find params[:submission_id]
+    if @submission.update_attribute(:upvotes, @submission.upvotes + 1)
+      redirect_to @submission
+    else
+      redirect_to @submission
+    end
+  end
+
   private
   def submission_params
     params.require(:submission).permit(:title, :url)

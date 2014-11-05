@@ -1,5 +1,6 @@
 <h1><%= link_to @submission.title, @submission.url %></h1>
 <h2>Upvotes: <%= @submission.upvotes %></h2>
+<%= render partial: 'partials/vote', locals: {submission: @submission} %>
 <%= link_to 'edit', action: :edit %>
 <h2>Comments</h2>
 <ul>
